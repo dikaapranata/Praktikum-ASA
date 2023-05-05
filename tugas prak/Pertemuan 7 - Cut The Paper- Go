@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func minSquares(p, l int) int {
+    if p == 0 || l == 0 {
+        return 0
+    }
+    if p == l {
+        return 1
+    }
+    if p > l {
+        p, l = l, p
+    }
+    return minSquares(p, l-p) + 1
+}
+
+func main() {
+    var p, l int
+    fmt.Scanf("%d", &p)
+    fmt.Scanf("%d", &l)
+    fmt.Println(minSquares(p, l))
+}
