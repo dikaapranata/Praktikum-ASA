@@ -1,0 +1,12 @@
+def minSquares(p, l):
+    if p == 0 or l == 0:
+        return 0
+    if p == l:
+        return 1
+    if p > l:
+        p, l = l, p
+    return minSquares(p, l - p) + 1
+
+p = int(input())
+l = int(input())
+print(minSquares(p, l))
